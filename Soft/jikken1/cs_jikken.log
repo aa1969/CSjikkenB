@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.4.15)  17 NOV 2024 15:26
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.4.15)  21 FEB 2025 22:48
  restricted system commands enabled.
 **cs_jikken.tex
 (./cs_jikken.tex
@@ -1308,7 +1308,7 @@ pentype/public/lm/lmroman12-bold.otf><c:/texlive/2024/texmf-dist/fonts/opentype/
 public/haranoaji/HaranoAjiGothic-Medium.otf><c:/texlive/2024/texmf-dist/fonts/op
 entype/public/lm/lmroman12-regular.otf><c:/texlive/2024/texmf-dist/fonts/opentyp
 e/public/haranoaji/HaranoAjiMincho-Regular.otf>
-Output written on cs_jikken.pdf (36 pages, 402614 bytes).
+Output written on cs_jikken.pdf (36 pages, 400060 bytes).
 
 PDF statistics: 193 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
