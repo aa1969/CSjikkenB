@@ -1,0 +1,24 @@
+\documentclass{ltjsarticle}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{center}
+\begin{circuitikz}
+  \draw
+  % Vcc to Resistor
+  (2,2) to[V, l_=$V_{cc}\ (3.3V)$] (4,2)
+  % Resistor to GPIO pin
+  (4,2) to[R, l_=$10k\Omega$] (6,2)
+  (6,2) to[short] (8,2)
+  (8,2) node[above]{GPIO pin}
+  % GPIO pin to switch
+  (6,2) to[short] (6,0)
+  (6,0) to[switch] (6,-2)
+  % Switch to GND
+  (6,-2) to[short] (4,-2)
+  (4,-2) node[ground] {};
+\end{circuitikz}
+\end{center}
+
+\end{document}

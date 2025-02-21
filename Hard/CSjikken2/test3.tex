@@ -1,0 +1,21 @@
+\documentclass{ltjsarticle}
+\usepackage{circuitikz}
+
+\begin{document}
+
+\begin{circuitikz} \draw
+  % Power source (3.3V)
+  (0,3) node[anchor=east]{3.3V} -- (2,3) to[R, l=$10k\Omega$] (2,0) % Pull-up resistor
+
+  % GPIO pin
+  (2,3) -- (4,3) node[anchor=west]{GPIO};
+
+  % Switch
+  (2,0) -- (2,-1)
+  to[switch] (2,-3) -- (0,-3) node[anchor=east]{GND};  % Connect to ground
+
+\end{circuitikz}
+
+\end{document}
+
+

@@ -1,0 +1,31 @@
+スクリプト開始 2024-11-14 13:57:14+09:00
+[root@icesc10 ~]# cat /etc/sysctl.d/10-ipv4.conf
+net.ipv4.ip_forward=1
+[root@icesc10 ~]# sysctl --system
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /etc/sysctl.d/10-ipv4.conf ...
+net.ipv4.ip_forward = 1
+* Applying /usr/lib/sysctl.d/50-coredump.conf ...
+kernel.core_pattern = |/usr/lib/systemd/systemd-coredump %P %u %g %s %t %c %h %e
+kernel.core_pipe_limit = 16
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+kernel.kptr_restrict = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.all.promote_secondaries = 1
+net.core.default_qdisc = fq_codel
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /usr/lib/sysctl.d/50-libkcapi-optmem_max.conf ...
+net.core.optmem_max = 81920
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+kernel.pid_max = 4194304
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.conf ...
+[root@icesc10 ~]# exit
+exit
+
+スクリプト終了 2024-11-14 13:57:50+09:00

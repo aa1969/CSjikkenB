@@ -1,0 +1,320 @@
+スクリプト開始 2024-11-14 15:48:08+09:00
+[root@icesc10 ~]# cat iptables.sh
+#!/bin/sh
+
+PATH=/sbin:/bin:/usr/bin:/usr/sbin
+
+## 変数の定義
+EXTERNAL_INTERFACE="enp1s0"       # 外側インタフェースの名前
+DMZ_INTERFACE="enp2s0"            # DMZ インタフェースの名前
+INTERNAL_INTERFACE="enp3s0"       # 内側インタフェースの名前
+
+# 外側インタフェースのIPアドレス
+IPADDR=`ip addr show $EXTERNAL_INTERFACE | \
+ sed -e 's/^.*inet \([^ \/]*\).*$/\1/p' -e d`
+# 内部ネットワーク・アドレス
+INTERNAL_LAN=`ip addr show $INTERNAL_INTERFACE | \
+ sed -e 's/^.*inet \([^ ]*\).*$/\1/p' -e d`
+
+# DMZネットワーク・アドレス
+DMZ_LAN=`ip addr show $DMZ_INTERFACE | \
+ sed -e 's/^.*inet \([^ ]*\).*$/\1/p' -e d`
+
+ANYWHERE="0.0.0.0/0"
+
+## 以下の設定を実行している間はパケットの転送を停止する
+echo 0 > /proc/sys/net/ipv4/ip_forward
+
+## すでに設定されているルールを消去する
+iptables -F
+iptables -F -t nat
+
+## ポリシーの初期設定 -> matchしない場合の扱い
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+
+## ループバック・インタフェースの入出力を許可する
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+
+##############################################################################
+##
+## INPUTチェーンの設定（デフォルト拒否）
+##
+
+iptables -A INPUT -i $EXTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 22 -j ACCEPT
+iptables -A INPUT -i $INTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 22 -j ACCEPT
+iptables -A INPUT -i $INTERNAL_INTERFACE -p udp -m state --state NEW -m udp \
+    --dport 67 -j ACCEPT
+iptables -A INPUT -i $INTERNAL_INTERFACE -p icmp -j ACCEPT
+iptables -A INPUT -i $DMZ_INTERFACE -p udp -m state --state NEW -m udp \
+    --dport 67 -j ACCEPT
+iptables -A INPUT -i $DMZ_INTERFACE -p icmp -j ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+##############################################################################
+##
+## OUTPUTチェーンの設定（デフォルト拒否）
+##
+
+iptables -A OUTPUT -o $EXTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 22 -j ACCEPT
+iptables -A OUTPUT -o $EXTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 80 -j ACCEPT
+iptables -A OUTPUT -o $EXTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 443 -j ACCEPT
+iptables -A OUTPUT -o $EXTERNAL_INTERFACE -p udp -m state --state NEW -m udp \
+    --dport 53 -j ACCEPT
+iptables -A OUTPUT -o $EXTERNAL_INTERFACE -p icmp -j ACCEPT
+iptables -A OUTPUT -o $INTERNAL_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 22 -j ACCEPT
+iptables -A OUTPUT -o $INTERNAL_INTERFACE -p icmp -j ACCEPT
+iptables -A OUTPUT -o $DMZ_INTERFACE -p tcp -m state --state NEW -m tcp \
+    --dport 22 -j ACCEPT
+iptables -A OUTPUT -o $DMZ_INTERFACE -p icmp -j ACCEPT
+iptables -A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+##############################################################################
+##
+## FORWARDチェーンの設定（デフォルト拒否）
+##
+
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $EXTERNAL_INTERFACE -p udp \
+    -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $EXTERNAL_INTERFACE -p icmp -j ACCEPT
+iptables -A FORWARD -i $EXTERNAL_INTERFACE -o $INTERNAL_INTERFACE \
+    -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i $INTERNAL_INTERFACE -o $DMZ_INTERFACE -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $INTERNAL_INTERFACE \
+    -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+
+
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE -p udp \
+    -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE -p icmp -j ACCEPT
+iptables -A FORWARD -i $EXTERNAL_INTERFACE -o $DMZ_INTERFACE \
+    -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+iptables -A FORWARD -i $EXTERNAL_INTERFACE -o $DMZ_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+iptables -A FORWARD -i $EXTERNAL_INTERFACE -o $DMZ_INTERFACE -p tcp \
+    -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+iptables -A FORWARD -i $DMZ_INTERFACE -o $EXTERNAL_INTERFACE \
+    -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+
+
+##############################################################################
+##
+## NATの設定
+##
+
+iptables -A POSTROUTING -t nat -s $INTERNAL_LAN -o $EXTERNAL_INTERFACE -j SNAT \
+    --to-source $IPADDR
+
+
+
+iptables -A POSTROUTING -t nat -s $DMZ_LAN -o $EXTERNAL_INTERFACE -j SNAT \
+    --to-source $IPADDR
+
+
+iptables -A PREROUTING -t nat -p tcp --dport 80 -d $IPADDR -i $EXTERNAL_INTERFACE -j DNAT \
+    --to-destination 192.168.150.2
+iptables -A PREROUTING -t nat -p tcp --dport 443 -d $IPADDR -i $EXTERNAL_INTERFACE -j DNAT \
+    --to-destination 192.168.150.2
+
+
+##############################################################################
+##
+## 設定の保存
+##
+#/etc/init.d/iptables save active
+
+## パケットの転送を開始する
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+exit 0
+[root@icesc10 ~]# iptables -L -n
+Chain INPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0            state NEW udp dpt:67
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0            state NEW udp dpt:67
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+
+Chain FORWARD (policy DROP)
+target     prot opt source               destination
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:22
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:80
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:443
+ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED udp dpt:53
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:22
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:80
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:443
+ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED udp dpt:53
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:80
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW,ESTABLISHED tcp dpt:443
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+
+Chain OUTPUT (policy DROP)
+target     prot opt source               destination
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:80
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:443
+ACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0            state NEW udp dpt:53
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            state NEW tcp dpt:22
+ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0
+ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+[root@icesc10 ~]# iptables-save
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:49:01 2024
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp3s0 -p icmp -j ACCEPT
+-A INPUT -i enp2s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp2s0 -p icmp -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp2s0 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -o enp1s0 -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
+-A OUTPUT -o enp1s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp3s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp2s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp2s0 -p icmp -j ACCEPT
+-A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+COMMIT
+# Completed on Thu Nov 14 15:49:01 2024
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:49:01 2024
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A PREROUTING -d 192.168.100.10/32 -i enp1s0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 192.168.150.2
+-A PREROUTING -d 192.168.100.10/32 -i enp1s0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 192.168.150.2
+-A POSTROUTING -s 192.168.200.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+-A POSTROUTING -s 192.168.150.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+COMMIT
+# Completed on Thu Nov 14 15:49:01 2024
+[root@icesc10 ~]# iptables-save > /etc/sysconfig/iptables
+[root@icesc10 ~]# cat /etc/syscongig/iptables
+cat: /etc/syscongig/iptables: そのようなファイルやディレクトリはありません
+[root@icesc10 ~]# cat /etc/sysconfig/iptables
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:49:26 2024
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT DROP [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp3s0 -p icmp -j ACCEPT
+-A INPUT -i enp2s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp2s0 -p icmp -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp2s0 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -o enp1s0 -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
+-A OUTPUT -o enp1s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp3s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp2s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp2s0 -p icmp -j ACCEPT
+-A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+COMMIT
+# Completed on Thu Nov 14 15:49:26 2024
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:49:26 2024
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A PREROUTING -d 192.168.100.10/32 -i enp1s0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 192.168.150.2
+-A PREROUTING -d 192.168.100.10/32 -i enp1s0 -p tcp -m tcp --dport 443 -j DNAT --to-destination 192.168.150.2
+-A POSTROUTING -s 192.168.200.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+-A POSTROUTING -s 192.168.150.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+COMMIT
+# Completed on Thu Nov 14 15:49:26 2024
+[root@icesc10 ~]# exit
+exit
+
+スクリプト終了 2024-11-14 15:50:38+09:00

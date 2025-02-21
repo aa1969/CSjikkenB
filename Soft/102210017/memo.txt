@@ -1,0 +1,4 @@
+ssh sy1361299@ssh.ice.nuie.nagoya-u.ac.jp -L 50017:localhost:50017
+
+python3 102210017.wsgi 50017
+

@@ -1,0 +1,23 @@
+# Fdb version 4
+["pdflatex"] 1728822013.4497 "c:/Users/escap/Desktop/workspace/CSjikkenB/Hard/CSjikken2/test2.tex" "test2.pdf" "test2" 1728822015.03073 2
+  "c:/Users/escap/Desktop/workspace/CSjikkenB/Hard/CSjikken2/test2.tex" 1728822010 502 f2097688e30c029c7b78684aa7a8d800 ""
+  "c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf" 1713183775 111536 fc712364c8d0a1b548d46c76f2678030 ""
+  "c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1713184345 71627 94eb9990bed73c364d7f53f960cc8c5b ""
+  "c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty" 1713183156 8356 7bbb2c2373aa810be568c29e333da8ed ""
+  "c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1713182181 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1713183612 678 4792914a8f45be57bb98413425e4c7af ""
+  "c:/texlive/2024/texmf-dist/tex/latex/tools/.tex" 1713186620 1386 e12910b1679ec687be15153859582c13 ""
+  "c:/texlive/2024/texmf-dist/tex/luatex/luatexja/ltjsarticle.cls" 1713183959 54048 93eefc8b4e019ecace6b76a007000556 ""
+  "c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty" 1713183959 3451 ff44d344e2e02104c23f66f932551697 ""
+  "c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja-core.sty" 1713183959 29891 95fb1b438599889b63eb75ea39dd702b ""
+  "c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja.sty" 1713183959 1973 29a03955e3dfdf207d91a8e3161fada3 ""
+  "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1713180253 41983 7ec6bfd6bf34339a61f0f08f42298e60 ""
+  "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1713187904 8222564 179586f07e49fdd9e38cc0e1a2400731 ""
+  "c:/texlive/2024/texmf.cnf" 1713187358 713 e69b156964470283e0530f5060668171 ""
+  "test2.aux" 1728822014 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "test2.tex" 1728822010 502 f2097688e30c029c7b78684aa7a8d800 ""
+  (generated)
+  "test2.aux"
+  "test2.log"
+  "test2.pdf"
+  (rewritten before read)

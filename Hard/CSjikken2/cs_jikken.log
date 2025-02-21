@@ -1,0 +1,1233 @@
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.4.15)  19 OCT 2024 11:59
+ restricted system commands enabled.
+**cs_jikken.tex
+(./cs_jikken.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+Lua module: luaotfload 2024-02-14 3.28 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "C:/texlive/2024/texmf-var/luatex-ca
+che/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "c:/texlive/2024/texmf-dist/tex/luatex/luaotfload/fontloader-2023-12-
+28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "C:/texlive/2024/texmf-var/luatex-ca
+che/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (c:/texlive/2024/texmf-
+dist/tex/luatex/luatexja/ltjsarticle.cls
+Document Class: ltjsarticle 2022/09/12 ltjsclasses 
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja.sty
+Package: luatexja 2024-02-19 Japanese Typesetting with Lua(La)TeX
+
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja-core.sty
+Package: luatexja-core 2023-04-06 Core of LuaTeX-ja
+
+(c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(c:/texlive/2024/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count186
+)
+\CatcodeTableOther=\catcodetable14
+\CatcodeTableExpl=\catcodetable15
+)
+(c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks17
+)
+(c:/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+
+(c:/texlive/2024/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count187
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count188
+)
+(c:/texlive/2024/texmf-dist/tex/latex/everyhook/everyhook.sty
+(c:/texlive/2024/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: everyhook 2014/11/26 v1.2 (SVN Rev: 12)\ Hooks for low level TeX every
+X primitives.
+\everypar=\toks20
+\frozen@everymath=\toks21
+\frozen@everydisplay=\toks22
+\everyhbox=\toks23
+\everyvbox=\toks24
+\everycr=\toks25
+)
+\ltjlineendcomment=\count189
+\ltj@dimen@zw=\dimen139
+\ltj@dimen@zh=\dimen140
+\ltj@dimen@jQ=\dimen141
+\ltj@icflag=\attribute4
+\ltj@curjfnt=\attribute5
+\ltj@curtfnt=\attribute6
+\ltj@charclass=\attribute7
+\ltj@charcode=\attribute8
+\ltj@autospc=\attribute9
+\ltj@autoxspc=\attribute10
+\ltj@yablshift=\attribute11
+\ltj@ykblshift=\attribute12
+\ltj@tablshift=\attribute13
+\ltj@tkblshift=\attribute14
+\jfam=\attribute15
+\ltj@vert@ori=\attribute16
+\ltj@dir=\attribute17
+\ltj@@japanese=\language2
+\ltj@tempcnta=\count190
+\ltj@tempdima=\dimen142
+\ltj@@stack=\count191
+\ltj@@group@level=\count192
+\ltj@kcat0=\attribute18
+\ltj@kcat1=\attribute19
+\ltj@kcat2=\attribute20
+\ltj@kcat3=\attribute21
+\ltj@kcat4=\attribute22
+\ltj@kcat5=\attribute23
+\ltj@kcat6=\attribute24
+Custom whatsit inhibitglue = 1
+Custom whatsit stack_marker = 2
+Custom whatsit begin_par = 3
+Custom whatsit direction = 4
+Custom whatsit box_boundary = 5
+Custom whatsit ja_al_boundary = 6(load cache: ltj-cid-auto-adobe-japan1.luc)
+Lua module: luatexja.charrange 2022-08-19 Handling the range of Japanese charact
+ers
+Lua module: luatexja.stack 2022-08-20 LuaTeX-ja stack system
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `post_linebreak_filter'.
+Inserting `ltj.direction' in `vpack_filter'.
+Inserting `ltj.direction' in `pre_output_filter'.
+Inserting `ltj.lineskip' in `post_linebreak_filter'.
+Inserting `ltj.lineskip' in `append_to_vlist_filter'.
+Lua module: luatexja.jfont 2023-04-06 Loader for Japanese fonts
+Removing  `luaotfload.define_font' from `define_font'.
+Inserting `luatexja.font_callback' in `define_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luatexja.define_font'.
+Inserting `ltj.get_vert_form' in `luatexja.define_jfont'.
+Removing  `ltj.prepare_extra_data' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.supply_tounicode' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.process_input_buffer' in `process_input_buffer'.
+Inserting `ltj.hyphenate' in `hyphenate'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Lua module: luatexja.jfmglue 2022-08-29 Insertion process of JFM glues, [x]kanji
+skip and others
+Inserting `luatexja.beginpar.np_info' in `luatexja.jfmglue.whatsit_getinfo'.
+Inserting `luatexja.beginpar.np_info_after' in `luatexja.jfmglue.whatsit_after'.
+Inserting `ltj.mlist_to_hlist_pre' in `pre_mlist_to_hlist_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `ltj.set_stack_level' from `pre_linebreak_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Removing  `ltj.main' from `pre_linebreak_filter'.
+Inserting `ltj.adjust_icflag' in `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `ltj.set_stack_level' from `hpack_filter'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `ltj.main' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.adjust_icflag' in `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/ltj-base.sty
+Package: ltj-base 2021-03-16
+\ltj@tempcntb=\count193
+\ltj@tempcntc=\count194
+\ltj@afbox=\box51
+)
+\ltj@@italic@inner=\luafunction25
+\ltj@@start@time@measure@inner=\luafunction26
+\ltj@@stop@time@measure@inner=\luafunction27
+\ltj@@jfont@inner=\luafunction28
+\ltj@zw@inner=\luafunction29
+\ltj@zh@inner=\luafunction30
+\ltj@reset@globaldefs@inner=\luafunction31
+\ltj@restore@globaldefs@inner=\luafunction32
+\ltj@@disihb@inner=\luafunction33
+\ltj@@ihb@inner=\luafunction34
+\ltj@@fakeparbegin@inner=\luafunction35
+\ltj@@fakeboxbdd@inner=\luafunction36
+\ltj@@ins@xk@inner=\luafunction37
+\ltj@@ins@k@inner=\luafunction38
+\ltjsetkanjiskip@inner=\luafunction39
+\ltjsetxkanjiskip@inner=\luafunction40
+\ltj@@getparam@one@inner=\luafunction41
+\ltj@alljachar@inner=\luafunction42
+\ltj@@lua@populate@insertwhatsit@inner=\luafunction43
+\ltj@@vadjust@begin@inner=\luafunction44
+\ltj@@vadjust@dirhook@inner=\luafunction45
+\ltj@@vadjust@check@dir@inner=\luafunction46
+\ltj@@box@dirhook@inner=\luafunction47
+\ltj@@reset@badness@inner=\luafunction48
+\ltj@@lua@raisebox@inner=\luafunction49
+\ltj@@vsplit@inner=\luafunction50
+\ltj@@lua@unboxcheckdir@inner=\luafunction51
+\ltj@@lua@uncopycheckdir@inner=\luafunction52
+\ltj@@lua@uncopy@restore@whatsit@inner=\luafunction53
+(load cache: ltj-kinsoku_default.luc)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/ltj-latex.sty
+Package: ltj-latex 2022-10-15 LaTeX support of LuaTeX-ja
+Inserting `ltj.direction' in `pre_shipout_filter'.
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjfont.sty
+Package: lltjfont 2023-04-13 Patch to NFSS2 for LuaTeX-ja
+\ltj@@latex@plv=\count195
+
+(c:/texlive/2024/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2021/04/29 v2.0v Standard LaTeX file
+\@remove@tlig@@@=\luafunction54
+LaTeX Font Info:    Redeclaring font encoding TU on input line 105.
+)
+\Cht=\dimen143
+\cht=\dimen144
+\Cdp=\dimen145
+\cdp=\dimen146
+\Cwd=\dimen147
+\cwd=\dimen148
+\Cvs=\dimen149
+\cvs=\dimen150
+\Chs=\dimen151
+\chs=\dimen152
+\cHT=\dimen153
+\dstrutbox=\box52
+\tstrutbox=\box53
+\zstrutbox=\box54
+LaTeX Info: Redefining \strut on input line 91.
+\ltj@@add@fenc@@inner=\luafunction55
+\ltj@@add@kyenc@@inner=\luafunction56
+\ltj@@add@ktenc@@inner=\luafunction57
+\ltj@@is@kyenc@@inner=\luafunction58
+\ltj@@is@ktenc@@inner=\luafunction59
+\ltj@@is@kenc@@inner=\luafunction60
+\ltj@@is@ffam@@inner=\luafunction61
+\ltj@@add@ffam@@inner=\luafunction62
+\ltj@@add@kfam@@inner=\luafunction63
+\ltj@@adjust@baseline@inner=\luafunction64
+LaTeX Info: Redefining \fontencoding on input line 646.
+LaTeX Info: Redefining \fontfamily on input line 689.
+LaTeX Info: Redefining \fontseries on input line 923.
+LaTeX Info: Redefining \fontseriesforce on input line 924.
+LaTeX Info: Redefining \fontshape on input line 944.
+LaTeX Info: Redefining \fontshapeforce on input line 955.
+\ltj@@jfont@@jfmonly@@inner=\luafunction65
+\ltj@@does@alt@set@@inner=\luafunction66
+\ltj@@cipath@clear@inner=\luafunction67
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjdefs.sty
+Package: lltjdefs 2022-01-23 Default font settings of LuaTeX-ja
+luaotfload | db : Font names database loaded from C:/texlive/2024/texmf-var/luat
+ex-cache/generic/names/luaotfload-names.luc.gz(load cache: extra_lmroman10-regul
+ar.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 79.
+
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/jfm-ujisv.lua)
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 79.
+(load cache: extra_haranoajimincho-regular.luc)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/jfm-ujis.lua)
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY3/mc/m/n --> JY3/gt/m/n on input line 88.
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjcore.sty
+Package: lltjcore 2023-02-26 Patch to LaTeX2e Kernel for LuaTeX-ja
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-03-14 L3 programming layer (loader) 
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2024-03-14 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count196
+Inserting `l3color' in `luaotfload.parse_color'.
+\l__pdf_internal_box=\box55
+))
+\@tombowwidth=\dimen154
+\@TL=\box56
+\@Tl=\box57
+\@TC=\box58
+\@TR=\box59
+\@Tr=\box60
+\@BL=\box61
+\@Bl=\box62
+\@BC=\box63
+\@BR=\box64
+\@Br=\box65
+\@CL=\box66
+\@CR=\box67
+(load cache: extra_lmmono9-regular.luc)
+\@bannertoken=\toks26
+\@@paperheight=\dimen155
+\@@paperwidth=\dimen156
+\@@topmargin=\dimen157
+LaTeX Info: Redefining \underline on input line 283.
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-atbegshi.sty
+Package: lltjp-atbegshi 2022-08-12 Patching \shipout hooks for LuaTeX-ja
+\l__platex_shipout_dummy_box=\box68
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty
+Package: lltjp-geometry 2021-10-24 Patch to geometry for LuaTeX-ja with vertica
+l writing mode
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)))
+\ltj@temp@cctb=\catcodetable16
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty
+Package: luatexja-compat 2020-08-08 Compatibility with pTeX
+(load cache: ltj-jisx0208.luc)
+\hour=\count197
+\minute=\count198
+))
+\jsc@mpt=\dimen158
+\jsc@mmm=\dimen159
+\jsc@smallskipamount=\skip48
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 416.
+\fullwidth=\dimen160
+(load cache: extra_lmroman8-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 7.3977pt on input line 557.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 7.3977pt on input line 557.
+\c@part=\count199
+\c@section=\count266
+\c@subsection=\count267
+\c@subsubsection=\count268
+\c@paragraph=\count269
+\c@subparagraph=\count270
+\@abstractbox=\box69
+\c@figure=\count271
+\c@table=\count272
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+LaTeX Info: Redefining \mc on input line 1210.
+LaTeX Info: Redefining \gt on input line 1211.
+\jsc@tocl@width=\dimen161
+\@lnumwidth=\dimen162
+\bibindent=\dimen163
+
+(c:/texlive/2024/texmf-dist/tex/platex/jsclasses/jslogo.sty
+Package: jslogo 2019/07/25 okumura, texjporg
+LaTeX Info: Redefining \TeX on input line 82.
+LaTeX Info: Redefining \LaTeX on input line 135.
+LaTeX Info: Redefining \LaTeXe on input line 188.
+)
+\heisei=\count273
+
+(c:/texlive/2024/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count274
+\c@dblbotnumber=\count275
+)
+(c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-stfloats.sty))
+(c:/texlive/2024/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(c:/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-03-14 L3 Experimental document command parser
+)
+(c:/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+
+(c:/texlive/2024/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count276
+Package zref Info: New property: abspage on input line 67.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: luatex.def on input line 149.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+\mdf@templength=\skip51
+\c@mdf@globalstyle@cnt=\count277
+\mdf@skipabove@length=\skip52
+\mdf@skipbelow@length=\skip53
+\mdf@leftmargin@length=\skip54
+\mdf@rightmargin@length=\skip55
+\mdf@innerleftmargin@length=\skip56
+\mdf@innerrightmargin@length=\skip57
+\mdf@innertopmargin@length=\skip58
+\mdf@innerbottommargin@length=\skip59
+\mdf@splittopskip@length=\skip60
+\mdf@splitbottomskip@length=\skip61
+\mdf@outermargin@length=\skip62
+\mdf@innermargin@length=\skip63
+\mdf@linewidth@length=\skip64
+\mdf@innerlinewidth@length=\skip65
+\mdf@middlelinewidth@length=\skip66
+\mdf@outerlinewidth@length=\skip67
+\mdf@roundcorner@length=\skip68
+\mdf@footenotedistance@length=\skip69
+\mdf@userdefinedwidth@length=\skip70
+\mdf@needspace@length=\skip71
+\mdf@frametitleaboveskip@length=\skip72
+\mdf@frametitlebelowskip@length=\skip73
+\mdf@frametitlerulewidth@length=\skip74
+\mdf@frametitleleftmargin@length=\skip75
+\mdf@frametitlerightmargin@length=\skip76
+\mdf@shadowsize@length=\skip77
+\mdf@extratopheight@length=\skip78
+\mdf@subtitleabovelinewidth@length=\skip79
+\mdf@subtitlebelowlinewidth@length=\skip80
+\mdf@subtitleaboveskip@length=\skip81
+\mdf@subtitlebelowskip@length=\skip82
+\mdf@subtitleinneraboveskip@length=\skip83
+\mdf@subtitleinnerbelowskip@length=\skip84
+\mdf@subsubtitleabovelinewidth@length=\skip85
+\mdf@subsubtitlebelowlinewidth@length=\skip86
+\mdf@subsubtitleaboveskip@length=\skip87
+\mdf@subsubtitlebelowskip@length=\skip88
+\mdf@subsubtitleinneraboveskip@length=\skip89
+\mdf@subsubtitleinnerbelowskip@length=\skip90
+
+(c:/texlive/2024/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box70
+\mdf@footnotebox=\box71
+\mdf@splitbox@one=\box72
+\mdf@splitbox@two=\box73
+\mdf@splitbox@save=\box74
+\mdfsplitboxwidth=\skip91
+\mdfsplitboxtotalwidth=\skip92
+\mdfsplitboxheight=\skip93
+\mdfsplitboxdepth=\skip94
+\mdfsplitboxtotalheight=\skip95
+\mdfframetitleboxwidth=\skip96
+\mdfframetitleboxtotalwidth=\skip97
+\mdfframetitleboxheight=\skip98
+\mdfframetitleboxdepth=\skip99
+\mdfframetitleboxtotalheight=\skip100
+\mdffootnoteboxwidth=\skip101
+\mdffootnoteboxtotalwidth=\skip102
+\mdffootnoteboxheight=\skip103
+\mdffootnoteboxdepth=\skip104
+\mdffootnoteboxtotalheight=\skip105
+\mdftotallinewidth=\skip106
+\mdfboundingboxwidth=\skip107
+\mdfboundingboxtotalwidth=\skip108
+\mdfboundingboxheight=\skip109
+\mdfboundingboxdepth=\skip110
+\mdfboundingboxtotalheight=\skip111
+\mdf@freevspace@length=\skip112
+\mdf@horizontalwidthofbox@length=\skip113
+\mdf@verticalmarginwhole@length=\skip114
+\mdf@horizontalspaceofbox=\skip115
+\mdfsubtitleheight=\skip116
+\mdfsubsubtitleheight=\skip117
+\c@mdfcountframes=\count278
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count279
+\c@mdf@env@i=\count280
+\c@mdf@env@ii=\count281
+\c@mdf@zref@counter=\count282
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 107.
+)
+\Gin@req@height=\dimen164
+\Gin@req@width=\dimen165
+)
+(c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count283
+\float@exts=\toks27
+\float@box=\box75
+\@float@everytoks=\toks28
+\@floatcapt=\box76
+)
+(c:/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen166
+\ar@mcellbox=\box77
+\extrarowheight=\dimen167
+\NC@list=\toks29
+\extratabsurround=\skip118
+\backup@length=\skip119
+\ar@cellbox=\box78
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen168
+\pgfutil@tempdimb=\dimen169
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box79
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.co
+de.tex
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen170
+\pgf@y=\dimen171
+\pgf@xa=\dimen172
+\pgf@ya=\dimen173
+\pgf@xb=\dimen174
+\pgf@yb=\dimen175
+\pgf@xc=\dimen176
+\pgf@yc=\dimen177
+\pgf@xd=\dimen178
+\pgf@yd=\dimen179
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count284
+\c@pgf@countb=\count285
+\c@pgf@countc=\count286
+\c@pgf@countd=\count287
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+\pgf@sys@id@count=\count288
+ (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-luatex.def
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count289
+\pgfsyssoftpath@bigbuffer@items=\count290
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 274.
+LaTeX Info: Redefining \color on input line 758.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen180
+\pgfmath@count=\count291
+\pgfmath@box=\box80
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count292
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen181
+\pgf@picmaxx=\dimen182
+\pgf@picminy=\dimen183
+\pgf@picmaxy=\dimen184
+\pgf@pathminx=\dimen185
+\pgf@pathmaxx=\dimen186
+\pgf@pathminy=\dimen187
+\pgf@pathmaxy=\dimen188
+\pgf@xx=\dimen189
+\pgf@xy=\dimen190
+\pgf@yx=\dimen191
+\pgf@yy=\dimen192
+\pgf@zx=\dimen193
+\pgf@zy=\dimen194
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen195
+\pgf@path@lasty=\dimen196
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen197
+\pgf@shorten@start@additional=\dimen198
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box81
+\pgf@hbox=\box82
+\pgf@layerbox@main=\box83
+\pgf@picture@serial@count=\count293
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen199
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen256
+\pgf@pt@y=\dimen257
+\pgf@pt@temp=\dimen258
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen259
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen260
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box84
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
+x
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box85
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen261
+\pgf@nodesepend=\dimen262
+)
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(c:/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen263
+\pgffor@skip=\dimen264
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.co
+de.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count296
+\pgfplotmarksize=\dimen265
+)
+\tikz@lastx=\dimen266
+\tikz@lasty=\dimen267
+\tikz@lastxsaved=\dimen268
+\tikz@lastysaved=\dimen269
+\tikz@lastmovetox=\dimen270
+\tikz@lastmovetoy=\dimen271
+\tikzleveldistance=\dimen272
+\tikzsiblingdistance=\dimen273
+\tikz@figbox=\box86
+\tikz@figbox@bg=\box87
+\tikz@tempbox=\box88
+\tikz@tempbox@bg=\box89
+\tikztreelevel=\count297
+\tikznumberofchildren=\count298
+\tikznumberofcurrentchild=\count299
+\tikz@fig@count=\count300
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count301
+\pgfmatrixcurrentcolumn=\count302
+\pgf@matrix@numberofcolumns=\count303
+)
+\tikz@expandcount=\count304
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(c:/texlive/2024/texmf-dist/tex/latex/circuitikz/circuitikz.sty
+Package: circuitikz 2024/02/09{} The CircuiTikz circuit drawing package version
+ 1.6.7
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.cod
+e.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen274
+\pgfarrowlength=\dimen275
+\pgfarrowwidth=\dimen276
+\pgfarrowlinewidth=\dimen277
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarybending.code.tex
+File: tikzlibrarybending.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
+File: pgfmodulebending.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransform
+ations.code.tex
+File: pgfmodulenonlineartransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgftransformnonlinearflatness=\dimen278
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.cod
+e.tex
+File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@curvilinear@time@a=\dimen279
+\pgf@curvilinear@length@a=\dimen280
+\pgf@curvilinear@length@b=\dimen281
+\pgf@curvilinear@length@c=\dimen282
+\pgf@curvilinear@length@d=\dimen283
+)
+\pgf@arrows@the@rigidity=\dimen284
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryfpu.code.tex
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirc.defines.tex
+\pgf@circ@count@a=\count305
+\pgf@circ@count@b=\count306
+\pgf@circ@count@c=\count307
+\pgf@circ@res@up=\dimen285
+\pgf@circ@res@down=\dimen286
+\pgf@circ@res@zero=\dimen287
+\pgf@circ@res@left=\dimen288
+\pgf@circ@res@right=\dimen289
+\pgf@circ@res@other=\dimen290
+\pgf@circ@res@step=\dimen291
+\pgf@circ@res@temp=\dimen292
+\pgf@circ@Rlen=\dimen293
+\pgf@circ@scaled@Rlen=\dimen294
+\pgfstartlinewidth=\dimen295
+)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircutils.tex
+\ctikz@scratchbox=\box90
+)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircpath.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircshapes.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircmonopoles.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircbipoles.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirctripoles.tex
+\pgf@circ@res@count=\count308
+)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircquadpoles.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircmultipoles.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirclabel.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircvoltage.tex
+\pgfcirc@labelshift=\dimen296
+)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcirccurrent.tex)
+(c:/texlive/2024/texmf-dist/tex/generic/circuitikz/pgfcircflow.tex))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.m
+ultipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box91
+\pgfnodeparttwobox=\box92
+\pgfnodepartthreebox=\box93
+\pgfnodepartfourbox=\box94
+\pgfnodeparttwentybox=\box95
+\pgfnodepartnineteenbox=\box96
+\pgfnodeparteighteenbox=\box97
+\pgfnodepartseventeenbox=\box98
+\pgfnodepartsixteenbox=\box99
+\pgfnodepartfifteenbox=\box100
+\pgfnodepartfourteenbox=\box101
+\pgfnodepartthirteenbox=\box102
+\pgfnodeparttwelvebox=\box103
+\pgfnodepartelevenbox=\box104
+\pgfnodeparttenbox=\box105
+\pgfnodepartninebox=\box106
+\pgfnodeparteightbox=\box107
+\pgfnodepartsevenbox=\box108
+\pgfnodepartsixbox=\box109
+\pgfnodepartfivebox=\box110
+)))
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen297
+)) (c:/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
+Package: lltjp-array 2019-07-18 Patch to array for LuaTeX-ja
+)
+(./cs_jikken.aux)
+\openout1 = cs_jikken.aux
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
+.
+ (c:/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count309
+\scratchdimen=\dimen298
+\scratchbox=\box111
+\nofMPsegments=\count310
+\nofMParguments=\count311
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count312
+\MPscratchDim=\dimen299
+\MPnumerator=\count313
+\makeMPintoPDFobject=\count314
+\everyMPtoPDFconversion=\toks43
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))(load cache: extra_lmroman12-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 13.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 13.
+(load cache: extra_lmroman17-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 23.00687pt on input line 18.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 23.00687pt on input line 18.
+
+
+Class ltjsarticle Warning: deprecated old font command `\bf' used.
+(ltjsarticle)              You should note, that since 1994 LaTeX2e provides a
+(ltjsarticle)              new font selection scheme called NFSS2 with several
+(ltjsarticle)              new, combinable font commands. This ltjsarticle
+(ltjsarticle)              class has defined the old font commands like
+(ltjsarticle)              `\bf' only for compatibility on input line 18.
+
+(load cache: extra_lmroman12-bold.luc)
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <24.88> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 23.00687pt on input line 18.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <24.88> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 23.00687pt on input line 18.
+(load cache: extra_haranoajigothic-medium.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 21.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 21.
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <20.74> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 21.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 21.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <20.74> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 21.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 21.
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 13.31586pt on input line 39.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 13.31586pt on input line 39.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 13.31586pt on input line 39.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 13.31586pt on input line 39.
+(load cache: extra_lmsans12-regular.luc)
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 48.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 48.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 54.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 54.
+(load cache: extra_lmsans10-regular.luc) [1
+
+]
+<raspi.JPEG, id=19, 1541.76pt x 1113.15875pt>
+File: raspi.JPEG Graphic file (type jpg)
+<use raspi.JPEG>
+Package luatex.def Info: raspi.JPEG  used on input line 98.
+(luatex.def)             Requested size: 226.55472pt x 163.56952pt.
+(load cache: extra_lmroman9-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 99.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 99.
+<fig2-1.png, id=20, 362.10281pt x 322.95656pt>
+File: fig2-1.png Graphic file (type png)
+<use fig2-1.png>
+Package luatex.def Info: fig2-1.png  used on input line 130.
+(luatex.def)             Requested size: 226.55472pt x 202.06418pt.
+ [2<./raspi.JPEG>](load cache: extra_lmmono10-regular.luc)
+<raspi2-1.JPEG, id=25, 1541.76pt x 1056.94875pt>
+File: raspi2-1.JPEG Graphic file (type jpg)
+<use raspi2-1.JPEG>
+Package luatex.def Info: raspi2-1.JPEG  used on input line 165.
+(luatex.def)             Requested size: 226.55472pt x 155.30992pt.
+ [3<./fig2-1.png>] [4<./raspi2-1.JPEG>]
+<fig2-2.png, id=34, 375.65344pt x 363.60844pt>
+File: fig2-2.png Graphic file (type png)
+<use fig2-2.png>
+Package luatex.def Info: fig2-2.png  used on input line 212.
+(luatex.def)             Requested size: 203.89786pt x 197.36095pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 215.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 215.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 6.47299pt on input line 215.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 215.
+
+warning  (file raspi2-2.JPEG) (readjpg): Exif resolution 72dpi x 72dpi differs f
+rom the input resolution 300dpi x 300dpi
+<raspi2-2.JPEG, id=35, 1541.76pt x 2055.68pt>
+File: raspi2-2.JPEG Graphic file (type jpg)
+<use raspi2-2.JPEG>
+Package luatex.def Info: raspi2-2.JPEG  used on input line 219.
+(luatex.def)             Requested size: 203.89786pt x 271.85875pt.
+[5<./fig2-2.png><./raspi2-2.JPEG
+warning  (readjpg): Exif resolution 72dpi x 72dpi differs from the input resolut
+ion 300dpi x 300dpi
+>]
+<result2-2.png, id=40, 517.935pt x 616.55344pt>
+File: result2-2.png Graphic file (type png)
+<use result2-2.png>
+Package luatex.def Info: result2-2.png  used on input line 258.
+(luatex.def)             Requested size: 226.55472pt x 269.69443pt.
+ [6<./result2-2.png>]
+warning  (file raspi2-3.JPEG) (readjpg): Exif resolution 72dpi x 72dpi differs f
+rom the input resolution 300dpi x 300dpi
+<raspi2-3.JPEG, id=45, 1541.76pt x 2055.68pt>
+File: raspi2-3.JPEG Graphic file (type jpg)
+<use raspi2-3.JPEG>
+Package luatex.def Info: raspi2-3.JPEG  used on input line 311.
+(luatex.def)             Requested size: 226.55472pt x 302.06528pt.
+[7] [8<./raspi2-3.JPEG
+warning  (readjpg): Exif resolution 72dpi x 72dpi differs from the input resolut
+ion 300dpi x 300dpi
+>]
+<result2-3.png, id=52, 423.08063pt x 511.9125pt>
+File: result2-3.png Graphic file (type png)
+<use result2-3.png>
+Package luatex.def Info: result2-3.png  used on input line 369.
+(luatex.def)             Requested size: 226.55472pt x 274.11653pt.
+ [9] [10<./result2-3.png>]
+<raspi2-4.JPEG, id=61, 1541.76pt x 1600.98125pt>
+File: raspi2-4.JPEG Graphic file (type jpg)
+<use raspi2-4.JPEG>
+Package luatex.def Info: raspi2-4.JPEG  used on input line 444.
+(luatex.def)             Requested size: 226.55472pt x 235.25102pt.
+ [11] [12<./raspi2-4.JPEG>] [13] [14] [15] [16]
+warning  (file raspi2-5.JPEG) (readjpg): Exif resolution 72dpi x 72dpi differs f
+rom the input resolution 300dpi x 300dpi
+<raspi2-5.JPEG, id=80, 1541.76pt x 2055.68pt>
+File: raspi2-5.JPEG Graphic file (type jpg)
+<use raspi2-5.JPEG>
+Package luatex.def Info: raspi2-5.JPEG  used on input line 679.
+(luatex.def)             Requested size: 226.55472pt x 302.06528pt.
+[17] [18<./raspi2-5.JPEG
+warning  (readjpg): Exif resolution 72dpi x 72dpi differs from the input resolut
+ion 300dpi x 300dpi
+>] [19](load cache: extra_lmroman10-italic.luc)
+LaTeX Font Info:    Font shape `JT3/gt/m/it' in size <10> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 769.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 769.
+LaTeX Font Info:    Font shape `JY3/gt/m/it' in size <10> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 769.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 769.
+ [20] (./cs_jikken.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-03-14>
+ ***********
+)
+
+Here is how much of LuaTeX's memory you used:
+ 34268 strings out of 476435
+ 125244,1977958 words of node,token memory allocated
+ 1183 words of node memory still in use:
+   7 hlist, 1 vlist, 4 rule, 2 glue, 3 kern, 1 glyph, 206 attribute, 93 glue_spe
+c, 27 attribute_list, 2 write, 9 user_defined nodes
+   avail lists: 1:34,2:36330,3:2007,4:410,5:74,6:132,7:4010,8:2,9:1386,10:48,11:
+56
+ 55662 multiletter control sequences out of 65536+600000
+ 53 fonts using 56145311 bytes
+ 125i,8n,128p,1874b,422s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf><c:/te
+xlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman9-regular.otf><c:/texlive/
+2024/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.otf><c:/texlive/2024/t
+exmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/texlive/2024/texmf-
+dist/fonts/opentype/public/lm/lmsans12-regular.otf><c:/texlive/2024/texmf-dist/f
+onts/opentype/public/lm/lmroman12-bold.otf><c:/texlive/2024/texmf-dist/fonts/ope
+ntype/public/haranoaji/HaranoAjiGothic-Medium.otf><c:/texlive/2024/texmf-dist/fo
+nts/opentype/public/lm/lmroman12-regular.otf><c:/texlive/2024/texmf-dist/fonts/o
+pentype/public/haranoaji/HaranoAjiMincho-Regular.otf>
+Output written on cs_jikken.pdf (21 pages, 5219280 bytes).
+
+PDF statistics: 151 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 16 words of extra memory for PDF output out of 10000 (max. 100000000)
+

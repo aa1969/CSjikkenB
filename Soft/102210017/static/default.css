@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 全体のフォント設定 */
+body {
+    font-family: Arial, sans-serif; /* フォントファミリーを設定 */
+    background-color: #f0f0f8; /* 背景色を設定 */
+    margin: 0; /* ページのデフォルトマージンをリセット */
+    padding: 20px; /* ページのパディングを設定 */
+}
+
+/* ヘッダーのスタイル */
+.header {
+    color: lightskyblue;
+    font-size: 2.5em; /* フォントサイズを設定 */
+    border-bottom: 1px solid lightskyblue; /* ヘッダーのボーダー */
+    margin-bottom: 30px;
+}
+
+/* フォームのスタイル */
+.form1 {
+    line-height: 2em;
+    background-color: #ffffff; /* フォームの背景色 */
+    padding: 15px; /* フォーム内のパディング */
+    border: 1px solid #cccccc; /* フォームのボーダー */
+    border-radius: 5px; /* ボーダーを丸くする */
+}
+
+/* フッターのスタイル */
+.footer {
+    color: lightskyblue;
+    margin: 4em 0 0;
+    padding: 5px;
+    border-top: 1px solid lightskyblue; /* フッターのボーダー */
+    text-align: right;
+    font-size: small; /* フォントサイズを設定 */
+}
+
+/* リストのスタイル */
+.ol1 {
+    margin: 20px 0; /* リストの外部マージン */
+    padding: 0; /* 内部パディングをリセット */
+    list-style-type: none; /* リストマーカーを消す */
+}
+
+.ol1 li {
+    margin: 5px 0; /* リストアイテムの間隔 */
+}
+
+/* ボタンのスタイル */
+button {
+    background-color: lightskyblue; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    border: none; /* ボタンのボーダーを消す */
+    padding: 10px 15px; /* ボタンのパディング */
+    border-radius: 5px; /* ボタンの角を丸くする */
+    cursor: pointer; /* カーソルをポインターに */
+    font-size: 1em; /* ボタンのフォントサイズ */
+}
+
+button:hover {
+    background-color: deepskyblue; /* ホバー時の背景色 */
+}
+

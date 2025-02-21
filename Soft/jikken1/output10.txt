@@ -1,0 +1,94 @@
+スクリプト開始 2024-11-14 15:52:13+09:00
+[root@icesc10 ~]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; disabled; vendor preset: enabled)
+   Active: inactive (dead)
+     Docs: man:firewalld(1)
+[root@icesc10 ~]# firewall-cmd --list-all
+FirewallD is not running
+[root@icesc10 ~]# firewall-cmd --permanent --add-service=dhcpv6-client
+FirewallD is not running
+[root@icesc10 ~]# ssh 192.168.150.2
+root@192.168.150.2's password:
+Last login: Thu Nov 14 14:43:13 2024 from 192.168.200.100
+[root@www ~]# systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Thu 2024-11-07 15:48:38 JST; 6 days ago
+     Docs: man:firewalld(1)
+ Main PID: 799 (firewalld)
+    Tasks: 2 (limit: 47995)
+   Memory: 52.6M
+   CGroup: /system.slice/firewalld.service
+           └─799 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+11月 07 15:48:37 www systemd[1]: Starting firewalld - dynamic firewall daemon...
+11月 07 15:48:38 www systemd[1]: Started firewalld - dynamic firewall daemon.
+11月 07 15:48:38 www firewalld[799]: WARNING: AllowZoneDrifting is enabled. This is considered an insecure configuration option. It will be removed in a future release. Please consider disabling it now.
+[root@www ~]# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp3s0
+  sources:
+  services: cockpit dhcpv6-client ssh
+  ports:
+  protocols:
+  forward: no
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+[root@www ~]# firewall-cmd --add-service=dhcpv6-client
+Warning: ALREADY_ENABLED: 'dhcpv6-client' already in 'public'
+success
+[root@www ~]# firewall-cmd --add-service=http
+success
+[root@www ~]# firewall-cmd --add-service=https
+success
+[root@www ~]# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp3s0
+  sources:
+  services: cockpit dhcpv6-client http https ssh
+  ports:
+  protocols:
+  forward: no
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+[root@www ~]# firewall-cmd --permanent --add-service=dhcpv6-client
+Warning: ALREADY_ENABLED: dhcpv6-client
+success
+[root@www ~]# firewall-cmd --permanent --add-service=http
+success
+[root@www ~]# firewall-cmd --permanent --add-service=https
+success
+[root@www ~]# systemctl restart firewalld
+[root@www ~]# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp3s0
+  sources:
+  services: cockpit dhcpv6-client http https ssh
+  ports:
+  protocols:
+  forward: no
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+[root@www ~]# exit
+ログアウト
+Connection to 192.168.150.2 closed.
+[root@icesc10 ~]# exit
+exit
+
+スクリプト終了 2024-11-14 15:58:39+09:00

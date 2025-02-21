@@ -1,0 +1,418 @@
+スクリプト開始 2024-11-14 14:58:51+09:00
+[root@icesc10 ~]# ssh 192.168.150.1
+root@192.168.150.1's password:
+Last login: Thu Nov 14 14:58:16 2024 from 192.168.150.1
+[root@icesc10 ~]# exit
+ログアウト
+Connection to 192.168.150.1 closed.
+[root@icesc10 ~]# ssh 192.168.150.2
+root@192.168.150.2's password:
+Permission denied, please try again.
+root@192.168.150.2's password:
+Last failed login: Thu Nov 14 14:19:57 JST 2024 from 192.168.150.1 on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Thu Nov 14 13:09:15 2024 from 192.168.150.1
+[root@www ~]# ping 192.168.150.1
+PING 192.168.150.1 (192.168.150.1) 56(84) bytes of data.
+64 bytes from 192.168.150.1: icmp_seq=1 ttl=64 time=0.593 ms
+64 bytes from 192.168.150.1: icmp_seq=2 ttl=64 time=0.471 ms
+64 bytes from 192.168.150.1: icmp_seq=3 ttl=64 time=0.460 ms
+64 bytes from 192.168.150.1: icmp_seq=4 ttl=64 time=0.506 ms
+64 bytes from 192.168.150.1: icmp_seq=5 ttl=64 time=0.491 ms
+64 bytes from 192.168.150.1: icmp_seq=6 ttl=64 time=0.499 ms
+64 bytes from 192.168.150.1: icmp_seq=7 ttl=64 time=0.506 ms
+^C
+--- 192.168.150.1 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6160ms
+rtt min/avg/max/mdev = 0.460/0.503/0.593/0.048 ms
+[root@www ~]# exit
+ログアウト
+Connection to 192.168.150.2 closed.
+[root@icesc10 ~]# pimg 192.168.200.100
+bash: pimg: コマンドが見つかりません
+[root@icesc10 ~]# ping 192.168.200.100
+PING 192.168.200.100 (192.168.200.100) 56(84) bytes of data.
+64 bytes from 192.168.200.100: icmp_seq=1 ttl=64 time=0.222 ms
+64 bytes from 192.168.200.100: icmp_seq=2 ttl=64 time=0.251 ms
+64 bytes from 192.168.200.100: icmp_seq=3 ttl=64 time=0.168 ms
+64 bytes from 192.168.200.100: icmp_seq=4 ttl=64 time=0.184 ms
+^C
+--- 192.168.200.100 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3071ms
+rtt min/avg/max/mdev = 0.168/0.206/0.251/0.034 ms
+[root@icesc10 ~]# ssh 192.168.200.100
+root@192.168.200.100's password:
+
+[root@icesc10 ~]# ssh ice@192.168.200.100
+ice@192.168.200.100's password:
+Last login: Fri Jul  6 18:15:50 2018 from 192.168.200.1
+[ice@internal ~]$ ping 192.168.200.1
+PING 192.168.200.1 (192.168.200.1) 56(84) bytes of data.
+64 bytes from 192.168.200.1: icmp_seq=1 ttl=64 time=0.557 ms
+64 bytes from 192.168.200.1: icmp_seq=2 ttl=64 time=0.448 ms
+64 bytes from 192.168.200.1: icmp_seq=3 ttl=64 time=0.496 ms
+64 bytes from 192.168.200.1: icmp_seq=4 ttl=64 time=0.491 ms
+^C
+--- 192.168.200.1 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3052ms
+rtt min/avg/max/mdev = 0.448/0.498/0.557/0.038 ms
+[ice@internal ~]$ ssh 192.168.200.1
+The authenticity of host '192.168.200.1 (192.168.200.1)' can't be established.
+ECDSA key fingerprint is SHA256:5foSXDaH6wJeyXnB/egn4wsnLar/nseOFmC8684inVQ.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.200.1' (ECDSA) to the list of known hosts.
+ice@192.168.200.1's password:
+Permission denied, please try again.
+ice@192.168.200.1's password:
+
+[ice@internal ~]$ ssh root@192.168.200.1
+root@192.168.200.1's password:
+Last login: Thu Nov 14 14:59:20 2024 from 192.168.150.1
+[root@icesc10 ~]# dig www.ice.nuie.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.ice.nuie.nagoya-u.ac.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26401
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 5c76e947d6a8700589947a926735935810891b1963603579 (good)
+;; QUESTION SECTION:
+;www.ice.nuie.nagoya-u.ac.jp.   IN      A
+
+;; ANSWER SECTION:
+www.ice.nuie.nagoya-u.ac.jp. 86400 IN   CNAME   icecs.ice.nuie.nagoya-u.ac.jp.
+icecs.ice.nuie.nagoya-u.ac.jp. 86400 IN A       10.11.1.7
+
+;; AUTHORITY SECTION:
+ice.nuie.nagoya-u.ac.jp. 86400  IN      NS      icemgr.ice.nuie.nagoya-u.ac.jp.
+
+;; ADDITIONAL SECTION:
+icemgr.ice.nuie.nagoya-u.ac.jp. 86400 IN A      10.10.1.2
+
+;; Query time: 2 msec
+;; SERVER: 10.10.1.2#53(10.10.1.2)
+;; WHEN: 木 11月 14 15:06:30 JST 2024
+;; MSG SIZE  rcvd: 157
+
+[root@icesc10 ~]# ping www.ice.nuie.nagoya-u.ac.jp
+PING icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7) 56(84) bytes of data.
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=1 ttl=61 time=0.767 ms
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=2 ttl=61 time=0.666 ms
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=3 ttl=61 time=0.768 ms
+^C
+--- icecs.ice.nuie.nagoya-u.ac.jp ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 0.666/0.733/0.768/0.057 ms
+[root@icesc10 ~]# lynx www.ice.nuie.nagoya-u.ac.jp
+[root@icesc10 ~]# ssh pz7412103@ssh.ice.nuie.magoya-u.ac.jp
+ssh: Could not resolve hostname ssh.ice.nuie.magoya-u.ac.jp: Name or service not known
+[root@icesc10 ~]# ssh pz7412103@ssh.ice.nuie.nagoya-u.ac.jp
+The authenticity of host 'ssh.ice.nuie.nagoya-u.ac.jp (10.11.1.12)' can't be established.
+ECDSA key fingerprint is SHA256:soLz3MP6RIr9S2d6cTH6al8Z56gPH0GBJL2V4cC4jLY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ssh.ice.nuie.nagoya-u.ac.jp,10.11.1.12' (ECDSA) to the list of known hosts.
+pz7412103@ssh.ice.nuie.nagoya-u.ac.jp's password:
+Last login: Thu Oct 31 16:31:44 2024 from 10.10.106.254
+In this server, password authentication will be only allowed for the campus-net.
+Please set up public key authentication for off-campus access by August 1st.
+(http://www.ice.nuie.nagoya-u.ac.jp/tebiki/tel.html)
+[pz7412103:~] exit
+ログアウト
+Connection to ssh.ice.nuie.nagoya-u.ac.jp closed.
+[root@icesc10 ~]# ssh 192.168.200.100
+root@192.168.200.100's password:
+
+[root@icesc10 ~]# ssh ice@192.168.200.100
+ice@192.168.200.100's password:
+Last login: Fri Jul  6 19:27:03 2018 from 192.168.200.1
+[ice@internal ~]$ dig www.ice.nuie.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.ice.nuie.nagoya-u.ac.jp
+;; global options: +cmd
+;; connection timed out; no servers could be reached
+[ice@internal ~]$ ping www.ice.nuie.nagoya-u.ac.jp
+ping: www.ice.nuie.nagoya-u.ac.jp: 名前またはサービスが不明です
+[ice@internal ~]$ ping 10.10.1.7
+PING 10.10.1.7 (10.10.1.7) 56(84) bytes of data.
+From 192.168.200.1 icmp_seq=1 Destination Host Prohibited
+From 192.168.200.1 icmp_seq=2 Destination Host Prohibited
+From 192.168.200.1 icmp_seq=3 Destination Host Prohibited
+From 192.168.200.1 icmp_seq=4 Destination Host Prohibited
+From 192.168.200.1 icmp_seq=5 Destination Host Prohibited
+^C
+--- 10.10.1.7 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4075ms
+
+[ice@internal ~]$ dig www.ice.nuie.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.ice.nuie.nagoya-u.ac.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27833
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: b0220d009b6e429a7799f0d0673596983fd1e396a8eb33f8 (good)
+;; QUESTION SECTION:
+;www.ice.nuie.nagoya-u.ac.jp.   IN      A
+
+;; ANSWER SECTION:
+www.ice.nuie.nagoya-u.ac.jp. 86400 IN   CNAME   icecs.ice.nuie.nagoya-u.ac.jp.
+icecs.ice.nuie.nagoya-u.ac.jp. 86400 IN A       10.11.1.7
+
+;; AUTHORITY SECTION:
+ice.nuie.nagoya-u.ac.jp. 86400  IN      NS      icemgr.ice.nuie.nagoya-u.ac.jp.
+
+;; ADDITIONAL SECTION:
+icemgr.ice.nuie.nagoya-u.ac.jp. 86400 IN A      10.10.1.2
+
+;; Query time: 1 msec
+;; SERVER: 10.10.1.2#53(10.10.1.2)
+;; WHEN: 金  7月 06 19:44:47 JST 2018
+;; MSG SIZE  rcvd: 157
+
+[ice@internal ~]$ dig www.ice.nuie.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.ice.nuie.nagoya-u.ac.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39199
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: d06f12435c5e02851d5dfa99673596a21213c48bf1ca6ff6 (good)
+;; QUESTION SECTION:
+;www.ice.nuie.nagoya-u.ac.jp.   IN      A
+
+;; ANSWER SECTION:
+www.ice.nuie.nagoya-u.ac.jp. 86400 IN   CNAME   icecs.ice.nuie.nagoya-u.ac.jp.
+icecs.ice.nuie.nagoya-u.ac.jp. 86400 IN A       10.11.1.7
+
+;; AUTHORITY SECTION:
+ice.nuie.nagoya-u.ac.jp. 86400  IN      NS      icemgr.ice.nuie.nagoya-u.ac.jp.
+
+;; ADDITIONAL SECTION:
+icemgr.ice.nuie.nagoya-u.ac.jp. 86400 IN A      10.10.1.2
+
+;; Query time: 1 msec
+;; SERVER: 10.10.1.2#53(10.10.1.2)
+;; WHEN: 金  7月 06 19:44:57 JST 2018
+;; MSG SIZE  rcvd: 157
+
+[ice@internal ~]$ ping www.i.nagoya-u.ac.jp
+PING www.i.nagoya-u.ac.jp (133.6.182.89) 56(84) bytes of data.
+64 bytes from www.i.nagoya-u.ac.jp (133.6.182.89): icmp_seq=1 ttl=59 time=1.27 ms
+64 bytes from www.i.nagoya-u.ac.jp (133.6.182.89): icmp_seq=2 ttl=59 time=1.68 ms
+64 bytes from www.i.nagoya-u.ac.jp (133.6.182.89): icmp_seq=3 ttl=59 time=1.79 ms
+64 bytes from www.i.nagoya-u.ac.jp (133.6.182.89): icmp_seq=4 ttl=59 time=1.75 ms
+64 bytes from www.i.nagoya-u.ac.jp (133.6.182.89): icmp_seq=5 ttl=59 time=1.75 ms
+^C
+--- www.i.nagoya-u.ac.jp ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 1.274/1.650/1.790/0.191 ms
+[ice@internal ~]$ dig www.i.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.i.nagoya-u.ac.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26358
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 404f97ca756c8049c64b7b86673596c07a71858bb2c9b1a8 (good)
+;; QUESTION SECTION:
+;www.i.nagoya-u.ac.jp.          IN      A
+
+;; ANSWER SECTION:
+www.i.nagoya-u.ac.jp.   119     IN      A       133.6.182.89
+
+;; AUTHORITY SECTION:
+i.nagoya-u.ac.jp.       119     IN      NS      ns.i.nagoya-u.ac.jp.
+i.nagoya-u.ac.jp.       119     IN      NS      nu104.nagoya-u.ac.jp.
+
+;; ADDITIONAL SECTION:
+ns.i.nagoya-u.ac.jp.    85803   IN      A       133.6.28.216
+nu104.nagoya-u.ac.jp.   26739   IN      A       133.6.1.9
+
+;; Query time: 1 msec
+;; SERVER: 10.10.1.2#53(10.10.1.2)
+;; WHEN: 金  7月 06 19:45:27 JST 2018
+;; MSG SIZE  rcvd: 162
+
+[ice@internal ~]$ lynx www.i.nagoya-u.ac.jp
+[ice@internal ~]$ lynx www.ice.nuie.nagoya-u.ac.jp
+[ice@internal ~]$ ssh pz7412103@ssh.ice.nuie.nagoya-u.ac.jp
+The authenticity of host 'ssh.ice.nuie.nagoya-u.ac.jp (10.11.1.12)' can't be established.
+ECDSA key fingerprint is SHA256:soLz3MP6RIr9S2d6cTH6al8Z56gPH0GBJL2V4cC4jLY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ssh.ice.nuie.nagoya-u.ac.jp,10.11.1.12' (ECDSA) to the list of known hosts.
+pz7412103@ssh.ice.nuie.nagoya-u.ac.jp's password:
+Last login: Thu Nov 14 15:15:52 2024 from icesc10
+In this server, password authentication will be only allowed for the campus-net.
+Please set up public key authentication for off-campus access by August 1st.
+(http://www.ice.nuie.nagoya-u.ac.jp/tebiki/tel.html)
+[pz7412103:~] exit
+ログアウト
+Connection to ssh.ice.nuie.nagoya-u.ac.jp closed.
+[ice@internal ~]$ ping 192.168.150.2
+PING 192.168.150.2 (192.168.150.2) 56(84) bytes of data.
+64 bytes from 192.168.150.2: icmp_seq=1 ttl=63 time=1.23 ms
+64 bytes from 192.168.150.2: icmp_seq=2 ttl=63 time=0.998 ms
+64 bytes from 192.168.150.2: icmp_seq=3 ttl=63 time=0.987 ms
+64 bytes from 192.168.150.2: icmp_seq=4 ttl=63 time=0.915 ms
+^C
+--- 192.168.150.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3003ms
+rtt min/avg/max/mdev = 0.915/1.033/1.232/0.119 ms
+[ice@internal ~]$ ssh root@192.168.150.2
+The authenticity of host '192.168.150.2 (192.168.150.2)' can't be established.
+ECDSA key fingerprint is SHA256:U9I9x013/aGGrIfAxJYvIx3dR3z0/UqFflYWxOf3JBo.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.150.2' (ECDSA) to the list of known hosts.
+root@192.168.150.2's password:
+Last login: Thu Nov 14 14:20:03 2024 from 192.168.150.1
+[root@www ~]# dig www.ice.nuie.nagoya-u.ac.jp
+
+; <<>> DiG 9.11.36-RedHat-9.11.36-16.el8_10.2 <<>> www.ice.nuie.nagoya-u.ac.jp
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4760
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 7bb28193389d0a7d31d6c17f6735979def385ec39a444986 (good)
+;; QUESTION SECTION:
+;www.ice.nuie.nagoya-u.ac.jp.   IN      A
+
+;; ANSWER SECTION:
+www.ice.nuie.nagoya-u.ac.jp. 86400 IN   CNAME   icecs.ice.nuie.nagoya-u.ac.jp.
+icecs.ice.nuie.nagoya-u.ac.jp. 86400 IN A       10.11.1.7
+
+;; AUTHORITY SECTION:
+ice.nuie.nagoya-u.ac.jp. 86400  IN      NS      icemgr.ice.nuie.nagoya-u.ac.jp.
+
+;; ADDITIONAL SECTION:
+icemgr.ice.nuie.nagoya-u.ac.jp. 86400 IN A      10.10.1.2
+
+;; Query time: 1 msec
+;; SERVER: 10.10.1.2#53(10.10.1.2)
+;; WHEN: 木 11月 14 14:43:53 JST 2024
+;; MSG SIZE  rcvd: 157
+
+[root@www ~]# ping www.ice.nuie.nagoya-u.ac.jp
+PING icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7) 56(84) bytes of data.
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=1 ttl=60 time=1.70 ms
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=2 ttl=60 time=1.33 ms
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=3 ttl=60 time=1.09 ms
+64 bytes from icecs.ice.nuie.nagoya-u.ac.jp (10.11.1.7): icmp_seq=4 ttl=60 time=1.09 ms
+^C
+--- icecs.ice.nuie.nagoya-u.ac.jp ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3004ms
+rtt min/avg/max/mdev = 1.088/1.303/1.703/0.250 ms
+[root@www ~]# lynx www.ice.nuie.nagoya-u.ac.jp
+[root@www ~]# lynx www.i.nagoya-u.ac.jp
+[root@www ~]# ssh pz7412103@ssh.ice.nuie.nagoya-u.ac.jp
+The authenticity of host 'ssh.ice.nuie.nagoya-u.ac.jp (10.11.1.12)' can't be established.
+ECDSA key fingerprint is SHA256:soLz3MP6RIr9S2d6cTH6al8Z56gPH0GBJL2V4cC4jLY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ssh.ice.nuie.nagoya-u.ac.jp,10.11.1.12' (ECDSA) to the list of known hosts.
+pz7412103@ssh.ice.nuie.nagoya-u.ac.jp's password:
+Last login: Thu Nov 14 15:22:58 2024 from icesc10
+In this server, password authentication will be only allowed for the campus-net.
+Please set up public key authentication for off-campus access by August 1st.
+(http://www.ice.nuie.nagoya-u.ac.jp/tebiki/tel.html)
+[pz7412103:~] exit
+ログアウト
+Connection to ssh.ice.nuie.nagoya-u.ac.jp closed.
+[root@www ~]# ping 192.168.200.100
+PING 192.168.200.100 (192.168.200.100) 56(84) bytes of data.
+^C
+--- 192.168.200.100 ping statistics ---
+44 packets transmitted, 0 received, 100% packet loss, time 44071ms
+
+[root@www ~]# ssh 192.168.200.100
+^C
+[root@www ~]# lynx 192.168.200.100
+
+
+終了します 原因: 割り込み 2
+
+[root@www ~]# exit
+ログアウト
+Connection to 192.168.150.2 closed.
+[ice@internal ~]$ exit
+ログアウト
+Connection to 192.168.200.100 closed.
+[root@icesc10 ~]# iptables-save > /etc/sysconfig/iptables
+[root@icesc10 ~]# cat /etc/sysconfig/iptables
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:31:07 2024
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [56:4416]
+:OUTPUT DROP [0:0]
+-A INPUT -i lo -j ACCEPT
+-A INPUT -i enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -i enp3s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp3s0 -p icmp -j ACCEPT
+-A INPUT -i enp2s0 -p udp -m state --state NEW -m udp --dport 67 -j ACCEPT
+-A INPUT -i enp2s0 -p icmp -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp3s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp3s0 -o enp2s0 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 22 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p udp -m state --state NEW,ESTABLISHED -m udp --dport 53 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -p icmp -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 80 -j ACCEPT
+-A FORWARD -i enp1s0 -o enp2s0 -p tcp -m state --state NEW,ESTABLISHED -m tcp --dport 443 -j ACCEPT
+-A FORWARD -i enp2s0 -o enp1s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A OUTPUT -o lo -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A OUTPUT -o enp1s0 -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+-A OUTPUT -o enp1s0 -p udp -m state --state NEW -m udp --dport 53 -j ACCEPT
+-A OUTPUT -o enp1s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp3s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp3s0 -p icmp -j ACCEPT
+-A OUTPUT -o enp2s0 -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A OUTPUT -o enp2s0 -p icmp -j ACCEPT
+-A OUTPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+COMMIT
+# Completed on Thu Nov 14 15:31:07 2024
+# Generated by iptables-save v1.8.5 on Thu Nov 14 15:31:07 2024
+*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A PREROUTING -d 192.168.100.10/32 -i enp1s0 -j DNAT --to-destination 192.168.150.2
+-A POSTROUTING -s 192.168.200.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+-A POSTROUTING -s 192.168.150.0/24 -o enp1s0 -j SNAT --to-source 192.168.100.10
+COMMIT
+# Completed on Thu Nov 14 15:31:07 2024
+[root@icesc10 ~]# exit
+ログアウト
+Connection to 192.168.200.1 closed.
+[ice@internal ~]$ exit
+ログアウト
+Connection to 192.168.200.100 closed.
+[root@icesc10 ~]# exit
+exit
+
+スクリプト終了 2024-11-14 15:32:05+09:00
